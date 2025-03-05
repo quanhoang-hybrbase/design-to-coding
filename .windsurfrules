@@ -1,0 +1,62 @@
+## Before execute any tasks, remember the current tech stack of this project:
+- NextJS 15. Official documentation: https://nextjs.org/docs
+- Tailwindcss 4 . Official documentation: https://tailwindcss.com/docs
+- Typescript
+- Shadcn/ui library. Official documentation: https://ui.shadcn.com/docs
+- Package manager: NPM
+- Testing: Jest. Official documentation: https://jestjs.io/docs/getting-started
+- Operating System: Windows 10
+
+## Project structure
+Follow the Bulletproof React architecture pattern (refer to: https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md):
+- components/ 
+    - ui/(shadcn-ui components default installation folder)
+    - core/(shared component across features))
+    - [component-name] / 
+        - src/ (the component itself or sub-components. For example: List, List-Item)
+        - tests/ (unit tests for this component)
+        - types/ (TypeScript types for this component)
+        - hooks/ (hooks used only by this component)
+- features/ (feature-based modules)
+    - [feature-name]/
+    - api/ (API calls related to the feature)
+    - components/ (components used only by this feature. Each component follows the defined "[component-name]/..." structure above)
+    - stores/ (state stores for this feature)
+    - tests/ (unit tests for this feature)
+    - types/ (TypeScript types for this feature)
+    - hooks/ (hooks used only by this feature)
+    - utils/ (utility functions specific to this feature)
+    - index.ts (one entry file public export - optional)
+- hooks/ (shared hooks used across the application)
+- lib/ (re-exports from libraries and our own abstractions)
+- providers/ (application providers)
+- stores/ (global state stores)
+- types/ (shared TypeScript types)
+- utils/ (shared utility functions)
+- app/ (Nextjs pages)
+    - [feature-route]/ (routes organized by feature)
+- public / 
+    - assets/ (static files like images, fonts, etc.)
+
+
+## When building Core components (located at "components\core"), remember to:
+- Always use the theme variables defined in global.css file for consistent styling across the project and design system alignment. Even if I tell you to follow fixed values, that just reference for you to choose appropriate Tailwind utilities from the theme variables.
+- Use this command only `npx shadcn@latest add <component-name>` whenever you need to install shadcn components. DONT EVER use `npx shadcn-ui@latest add <component-name>`
+
+## When building UI layouts, remember to:
+- Always start with the "core" components folder (located at "components\core") to get necessary components to build the layout. DO NOT EVER use any other component from "components" folder unless I explicitly tell you to. 
+- In case you need to use components from other folders or third-party libraries, you must inform me. 
+
+## Remember to follow NextJS best practices:
+- Utilize App Router for routing
+- Implement proper error boundaries
+- Image component for optimized images. If you detect any Image component that use external link, you must inform me to replace the source with local assets
+- Link component for client-side navigation
+- Head component for metadata
+- Implement proper loading states
+- Use 'use client' directive only when necessary: Event listeners, Browser APIs, State management, Client-side-only libraries
+
+## When implementing features
+- Each feature directory should contain domain-specific code for a given feature
+- All features should have a clear and well-defined public API exposed through their index.ts file
+
