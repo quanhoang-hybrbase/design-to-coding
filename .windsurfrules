@@ -11,12 +11,14 @@
 Follow the Bulletproof React architecture pattern (refer to: https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md):
 - components/ 
     - ui/(shadcn-ui components default installation folder)
-    - core/(shared component across features))
-    - [component-name] / 
-        - src/ (the component itself or sub-components. For example: List, List-Item)
-        - tests/ (unit tests for this component)
-        - types/ (TypeScript types for this component)
-        - hooks/ (hooks used only by this component)
+    - core/(shared component across features, built upon shadcn-ui components)
+        - [component-name] / 
+            - src/ (the component itself or sub-components. For example: List, List-Item)
+            - tests/ (unit tests for this component)
+            - types/ (TypeScript types for this component)
+            - hooks/ (hooks used only by this component)
+    - [custom-core-component-name]/ (customized components/sections built upon core components, shared across pages and features)
+        - src/...
 - features/ (feature-based modules)
     - [feature-name]/
     - api/ (API calls related to the feature)
@@ -34,18 +36,30 @@ Follow the Bulletproof React architecture pattern (refer to: https://github.com/
 - types/ (shared TypeScript types)
 - utils/ (shared utility functions)
 - app/ (Nextjs pages)
-    - [feature-route]/ (routes organized by feature)
+    - ([group-route])/ (related routes grouped together. For example: marketing)
+        - [route]/ (specific route under the group)
+            - page.js - Main content for a route
+            - layout.tsx - Shared UI for segments and children
+            - loading.tsx - Loading UI
+            - error.tsx - Error UI
+            - not-found.tsx - Not found UI
+            - route.ts - API endpoints
+            - [component-name]/ (optional)
 - public / 
     - assets/ (static files like images, fonts, etc.)
 
 
 ## When building Core components (located at "components\core"), remember to:
 - Always use the theme variables defined in global.css file for consistent styling across the project and design system alignment. Even if I tell you to follow fixed values, that just reference for you to choose appropriate Tailwind utilities from the theme variables.
+- Always use Shadcn components (from "components\ui") to build the Core components.
 - Use this command only `npx shadcn@latest add <component-name>` whenever you need to install shadcn components. DONT EVER use `npx shadcn-ui@latest add <component-name>`
+- Don't generate unit tests unless I explicitly ask you to.
 
 ## When building UI layouts, remember to:
 - Always start with the "core" components folder (located at "components\core") to get necessary components to build the layout. DO NOT EVER use any other component from "components" folder unless I explicitly tell you to. 
 - In case you need to use components from other folders or third-party libraries, you must inform me. 
+- Don't generate unit tests unless I explicitly ask you to.
+
 
 ## Remember to follow NextJS best practices:
 - Utilize App Router for routing
