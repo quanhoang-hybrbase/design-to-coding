@@ -129,3 +129,8 @@ Now analyze carefully and please provide me your step-by-step game plan to build
 
 
 # Build section template
+Based on the requirements for [xxx] in @PRD.md , please refine the @[path-to-component]  to match the UI of the given image as accurately as possible. 
+
+# Reminders
+- Use theme variables from `global.css` and Tailwind utilities only for styling consistency. Never use arbitrary values.
+- Additionally, analyze carefully again the UI and suggest me other UI elements that can be also extracted as reusable core components as well.

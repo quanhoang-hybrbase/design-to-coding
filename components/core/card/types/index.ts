@@ -44,13 +44,7 @@ export interface CardProps extends ShadcnCardProps {
 	objectFit?: 'cover' | 'contain';
 	
 	/**
-	 * Background color class
-	 * @default 'bg-muted'
-	 */
-	backgroundColor?: string;
-	
-	/**
-	 * Whether to show hover effect
+	 * Enable hover effect
 	 * @default false
 	 */
 	hoverEffect?: boolean;
@@ -61,12 +55,12 @@ export interface CardProps extends ShadcnCardProps {
 	children?: React.ReactNode;
 	
 	/**
-	 * Optional headingProps for the heading element
+	 * Optional props for heading element
 	 */
 	headingProps?: HTMLAttributes<HTMLHeadingElement>;
 	
 	/**
-	 * Optional descriptionProps for the description element
+	 * Optional props for description element
 	 */
 	descriptionProps?: HTMLAttributes<HTMLParagraphElement>;
 }

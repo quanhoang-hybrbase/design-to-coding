@@ -6,55 +6,118 @@ import { ButtonGroup } from '@/components/core/button-group'
 import { FeatureGallery } from './feature-gallery'
 import { FeatureSectionProps } from '../types'
 import { cn } from '@/lib/utils'
+import { ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 /**
- * FeatureSection Component
+ * Feature Section Component
  * 
- * A section for displaying a grid of features with title and optional buttons
+ * A flexible section component that displays a collection of features in different layouts.
+ * Supports three variants (v1, v2, v3) with different styling and layout options.
+ * 
+ * @component
  */
 function FeatureSection({
 	title,
 	features,
-	buttons,
 	variant = 'v1',
 	className,
-	backgroundColor = 'bg-background',
 }: FeatureSectionProps) {
-	// Figma values for padding
-	const paddingClasses = 'py-28 px-4 md:px-16'
-	
-	// Figma values for gap
-	const gapClasses = 'space-y-20'
-	
+	// Common padding and spacing classes used across all variants
+	const sectionClasses = cn(
+		'py-16 md:py-28 px-5 md:px-16', // Consistent padding
+		'space-y-14 md:space-y-16',     // Consistent vertical spacing
+		className
+	)
+
+	/**
+	 * Renders the appropriate content based on the selected variant
+	 */
+	const renderVariantContent = () => {
+		switch (variant) {
+			case 'v1':
+				return (
+					<>
+						<SectionTitle
+							{...title}
+							alignment="center"
+							className="max-w-3xl mx-auto"
+						/>
+						<FeatureGallery
+							features={features}
+							variant={variant}
+							cardProps={{
+								variant: 'v1',
+							}}
+						/>
+						{features[0]?.buttons && (
+							<div className="flex justify-center w-full px-5 md:px-0">
+								<ButtonGroup stackOnMobile={true} className="w-full md:w-auto">
+									{features[0].buttons.map((button, index) => (
+										<Button 
+											key={index} 
+											variant={button.variant || 'default'} 
+											asChild={!!button.href}
+											className="w-full md:w-auto"
+											{...button.buttonProps}
+										>
+											{button.href ? (
+												<a href={button.href}>{button.label}</a>
+											) : (
+												button.label
+											)}
+										</Button>
+									))}
+								</ButtonGroup>
+							</div>
+						)}
+					</>
+				)
+				
+			case 'v2':
+				return (
+					<>
+						<SectionTitle
+							{...title}
+							alignment="center"
+							className="max-w-3xl mx-auto"
+						/>
+						<FeatureGallery
+							features={features}
+							variant={variant}
+							cardProps={{
+								variant: 'v2',
+							}}
+						/>
+					</>
+				)
+				
+			case 'v3':
+				return (
+					<>
+						<SectionTitle
+							{...title}
+							alignment="left"
+							className="max-w-3xl"
+						/>
+						<FeatureGallery
+							features={features}
+							variant={variant}
+							cardProps={{
+								variant: 'v3',
+							}}
+						/>
+					</>
+				)
+				
+			default:
+				return null
+		}
+	}
+
 	return (
-		<section className={cn(
-			paddingClasses,
-			gapClasses,
-			backgroundColor,
-			className
-		)}>
-			<SectionTitle
-				tagline={title.tagline}
-				heading={title.heading}
-				description={title.description}
-			/>
-			
-			<FeatureGallery features={features} />
-			
-			{buttons && buttons.length > 0 && (
-				<ButtonGroup align="center" className="mt-12">
-					{buttons.map((button, index) => (
-						<Button
-							key={index}
-							variant={button.variant || 'default'}
-							href={button.href}
-							{...button}
-						>
-							{button.label}
-						</Button>
-					))}
-				</ButtonGroup>
-			)}
+		<section className={sectionClasses}>
+			{renderVariantContent()}
 		</section>
 	)
 }

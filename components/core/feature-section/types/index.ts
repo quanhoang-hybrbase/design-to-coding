@@ -1,109 +1,124 @@
 import { ButtonProps } from '@/components/ui/button'
-import { CardProps } from '@/components/core/card'
-import { SectionTitleProps } from '@/components/core/section-title'
+import { CardProps } from '@/components/core/card/types'
+import { SectionTitleProps } from '@/components/core/section-title/types'
 
 /**
- * Feature item data structure
+ * Feature Section Button
+ * 
+ * Represents a button in the feature section
+ */
+export interface FeatureButton {
+	/**
+	 * Button label text
+	 */
+	label: string
+	
+	/**
+	 * Button URL
+	 */
+	href?: string
+	
+	/**
+	 * Button variant
+	 * @default 'default'
+	 */
+	variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
+	
+	/**
+	 * Additional button props
+	 */
+	buttonProps?: Omit<ButtonProps, 'variant'>
+}
+
+/**
+ * Feature Item
+ * 
+ * Represents a single feature in the feature section
  */
 export interface FeatureItem {
 	/**
-	 * Image source URL
-	 */
-	imageSrc?: string;
-	
-	/**
-	 * Image alt text
-	 */
-	imageAlt?: string;
-	
-	/**
 	 * Feature heading
 	 */
-	heading: string;
+	heading: string
 	
 	/**
 	 * Feature description
 	 */
-	description: string;
+	description: string
 	
 	/**
-	 * Optional link URL for the feature
+	 * Feature image source
 	 */
-	link?: string;
+	imageSrc?: string
+	
+	/**
+	 * Feature image alt text
+	 */
+	imageAlt?: string
+	
+	/**
+	 * Feature icon (for v3 variant)
+	 */
+	icon?: string
+	
+	/**
+	 * Feature buttons
+	 */
+	buttons?: FeatureButton[]
 }
 
 /**
- * Button item data structure
- */
-export interface ButtonItem extends Omit<ButtonProps, 'children'> {
-	/**
-	 * Button label
-	 */
-	label: string;
-	
-	/**
-	 * Optional link URL for the button
-	 */
-	href?: string;
-	
-	/**
-	 * Optional variant for the button
-	 */
-	variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
-}
-
-/**
- * FeatureSection component types
+ * Feature Section Props
+ * 
+ * Props for the FeatureSection component
  */
 export interface FeatureSectionProps {
 	/**
 	 * Section title props
 	 */
-	title: SectionTitleProps;
+	title: SectionTitleProps
 	
 	/**
-	 * Array of feature items
+	 * Array of feature items to display
 	 */
-	features: FeatureItem[];
+	features: FeatureItem[]
 	
 	/**
-	 * Optional array of button items
-	 */
-	buttons?: ButtonItem[];
-	
-	/**
-	 * Variant of the feature section
+	 * Section variant
 	 * @default 'v1'
 	 */
-	variant?: 'v1' | 'v2' | 'v3';
+	variant?: 'v1' | 'v2' | 'v3'
 	
 	/**
-	 * Optional className for custom styling
+	 * Additional class names
 	 */
-	className?: string;
-	
-	/**
-	 * Optional background color class
-	 */
-	backgroundColor?: string;
+	className?: string
 }
 
 /**
- * FeatureGallery component types
+ * Feature Gallery Props
+ * 
+ * Props for the FeatureGallery component
  */
 export interface FeatureGalleryProps {
 	/**
-	 * Array of feature items
+	 * Array of feature items to display
 	 */
-	features: FeatureItem[];
+	features: FeatureItem[]
 	
 	/**
-	 * Optional card props to apply to all cards
+	 * Gallery variant (matches the parent FeatureSection variant)
+	 * @default 'v1'
 	 */
-	cardProps?: Partial<CardProps>;
+	variant?: 'v1' | 'v2' | 'v3'
 	
 	/**
-	 * Optional className for custom styling
+	 * Additional class names
 	 */
-	className?: string;
+	className?: string
+	
+	/**
+	 * Props to pass to each Card component
+	 */
+	cardProps?: Partial<CardProps>
 }

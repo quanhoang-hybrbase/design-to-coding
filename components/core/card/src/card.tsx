@@ -28,7 +28,6 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
 	description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
 	aspectRatio,
 	objectFit = 'cover',
-	backgroundColor = 'bg-bg-weak-50',
 	hoverEffect = false,
 	className,
 	children,
@@ -59,7 +58,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
 		<ShadcnCard
 			ref={ref}
 			className={cn(
-				'overflow-hidden flex flex-col border-none shadow-none',
+				'overflow-hidden bg-transparent py-0 flex flex-col border-none shadow-none',
 				'gap-8 md:gap-8 sm:gap-6',
 				className
 			)}
@@ -67,7 +66,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
 		>
 			{/* Image */}
 			{imageSrc && (
-				<div className={cn('w-full relative rounded-3xl overflow-hidden', aspectRatioClass, backgroundColor)}>
+				<div className={cn('w-full relative rounded-3xl overflow-hidden', aspectRatioClass)}>
 					<Image
 						src={imageSrc}
 						alt={imageAlt}
@@ -112,7 +111,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
 		<ShadcnCard
 			ref={ref}
 			className={cn(
-				'overflow-hidden flex flex-col border-none shadow-none',
+				'overflow-hidden bg-transparent py-0 flex flex-col border-none shadow-none',
 				'gap-6',
 				className
 			)}
@@ -120,7 +119,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
 		>
 			{/* Image */}
 			{imageSrc && (
-				<div className={cn('w-full relative rounded-3xl overflow-hidden', aspectRatioClass, backgroundColor)}>
+				<div className={cn('w-full relative rounded-3xl overflow-hidden', aspectRatioClass)}>
 					<Image
 						src={imageSrc}
 						alt={imageAlt}
@@ -165,7 +164,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
 		<ShadcnCard
 			ref={ref}
 			className={cn(
-				'overflow-hidden border-none shadow-none',
+				'overflow-hidden bg-transparent py-0 border-none shadow-none',
 				className
 			)}
 			{...props}

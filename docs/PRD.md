@@ -147,6 +147,7 @@ A section template to display a list of key features in grids
 This component consist of 3 sub-components:
 - Section Title (core)
 - Feature Gallery
+    - List of Card components(core) 
 - Button Group (core, optional)
 
 ### Props (Variants)

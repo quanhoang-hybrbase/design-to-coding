@@ -77,4 +77,4 @@ Follow the Bulletproof React architecture pattern (refer to: https://github.com/
 - When creating new folders using terminal commands, create one by one by using `mkdir`. DONT USE `mkdir -p`
 - When I say "commit":
     - commit the changes you have made so far and push to the remote Github repo
-    - Update what you have completed/in-progress in docs\work-logs.md along with your learning and insights. Continue your logs within the current date group/section
+    - Update what you have completed/in-progress in docs\work-logs.md along with your learning and insights. Organize all logs neatly  by date
