@@ -1,0 +1,82 @@
+{
+  "bg": {
+    "strong-950": {
+      "$type": "color",
+      "$value": "{neutral.950}"
+    },
+    "surface-800": {
+      "$type": "color",
+      "$value": "{neutral.800}"
+    },
+    "sub-300": {
+      "$type": "color",
+      "$value": "{neutral.300}"
+    },
+    "weak-50": {
+      "$type": "color",
+      "$value": "{neutral.50}"
+    }
+  },
+  "text": {
+    "strong-950": {
+      "$type": "color",
+      "$value": "{neutral.950}"
+    },
+    "sub-600": {
+      "$type": "color",
+      "$value": "{neutral.600}"
+    },
+    "soft-400": {
+      "$type": "color",
+      "$value": "{neutral.400}"
+    },
+    "disabled-300": {
+      "$type": "color",
+      "$value": "{neutral.300}"
+    },
+    "white-50": {
+      "$type": "color",
+      "$value": "{neutral.50}"
+    }
+  },
+  "stroke": {
+    "strong-950": {
+      "$type": "color",
+      "$value": "{neutral.950}"
+    },
+    "sub-300": {
+      "$type": "color",
+      "$value": "{neutral.300}"
+    },
+    "soft-200": {
+      "$type": "color",
+      "$value": "{neutral.200}"
+    },
+    "white-50": {
+      "$type": "color",
+      "$value": "{neutral.50}"
+    }
+  },
+  "icon": {
+    "strong-950": {
+      "$type": "color",
+      "$value": "{neutral.950}"
+    },
+    "sub-600": {
+      "$type": "color",
+      "$value": "{neutral.600}"
+    },
+    "soft-400": {
+      "$type": "color",
+      "$value": "{neutral.400}"
+    },
+    "disabled-300": {
+      "$type": "color",
+      "$value": "{neutral.300}"
+    },
+    "white-50": {
+      "$type": "color",
+      "$value": "{neutral.50}"
+    }
+  }
+}

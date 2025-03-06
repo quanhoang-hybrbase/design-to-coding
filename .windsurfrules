@@ -1,17 +1,18 @@
-## Before execute any tasks, remember the current tech stack of this project:
-- NextJS 15. Official documentation: https://nextjs.org/docs
-- Tailwindcss 4 . Official documentation: https://tailwindcss.com/docs
-- Typescript
-- Shadcn/ui library. Official documentation: https://ui.shadcn.com/docs
-- Package manager: NPM
-- Testing: Jest. Official documentation: https://jestjs.io/docs/getting-started
-- Operating System: Windows 10
+## Tech Stack
+- **Front-end:** NextJS 15 ([Docs](https://nextjs.org/docs))
+- **Styling:** Tailwindcss 4 ([Docs](https://tailwindcss.com/docs))
+- **Language:** Typescript
+- **UI Library:** Shadcn UI ([Docs](https://ui.shadcn.com/docs))
+- **Package Manager:** NPM
+- **Icon Library:** lucide-react ([Docs](https://lucide.dev/))
+- **Testing:** Jest ([Docs](https://jestjs.io/docs/getting-started))
+- **OS:** Windows 10
 
 ## Project structure
 Follow the Bulletproof React architecture pattern (refer to: https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md):
 - components/ 
     - ui/(shadcn-ui components default installation folder)
-    - core/(shared component across features, built upon shadcn-ui components)
+    - core/(shared components or section templates to build hi-fidelity complex UIs, built upon shadcn-ui components)
         - [component-name] / 
             - src/ (the component itself or sub-components. For example: List, List-Item)
             - tests/ (unit tests for this component)
@@ -49,28 +50,31 @@ Follow the Bulletproof React architecture pattern (refer to: https://github.com/
     - assets/ (static files like images, fonts, etc.)
 
 
-## When building Core components (located at "components\core"), remember to:
-- Always use the theme variables defined in global.css file for consistent styling across the project and design system alignment. Even if I tell you to follow fixed values, that just reference for you to choose appropriate Tailwind utilities from the theme variables.
-- Always use Shadcn components (from "components\ui") to build the Core components.
+## For frontend development, ALWAYS:
+- Use theme variables from `global.css` and Tailwind utilities only for styling consistency. Never use arbitrary values.
+- Use Shadcn components (from "components\ui") or core components (located at "components\core") only.
 - Use this command only `npx shadcn@latest add <component-name>` whenever you need to install shadcn components. DONT EVER use `npx shadcn-ui@latest add <component-name>`
+- Code with mobile-first, apply responsive principles for flexibility across devices.
 - Don't generate unit tests unless I explicitly ask you to.
-
-## When building UI layouts, remember to:
-- Always start with the "core" components folder (located at "components\core") to get necessary components to build the layout. DO NOT EVER use any other component from "components" folder unless I explicitly tell you to. 
-- In case you need to use components from other folders or third-party libraries, you must inform me. 
-- Don't generate unit tests unless I explicitly ask you to.
-
-
-## Remember to follow NextJS best practices:
-- Utilize App Router for routing
-- Implement proper error boundaries
-- Image component for optimized images. If you detect any Image component that use external link, you must inform me to replace the source with local assets
-- Link component for client-side navigation
-- Head component for metadata
-- Implement proper loading states
-- Use 'use client' directive only when necessary: Event listeners, Browser APIs, State management, Client-side-only libraries
+- Inform me if you need to use components from other folders or third-party libraries
+- Strictly follow the instructions defined in PRD.md and the given UI. 
+    - For any component if you see the "core" in the doc, that means that existing core component you need to reuse. If you see "shadcn", that means that existing shadcn component you need to reuse.
+    - While following requirements, be sure to update the status of the component/feature in the doc
+- Follow NextJS best practices:
+    - Utilize App Router for routing
+    - Implement proper error boundaries
+    - Image component for optimized images. Inform me if external links detected to replace with local assets
+    - Link component for client-side navigation
+    - Head component for metadata
+    - Implement proper loading states
+    - Use 'use client' directive only when necessary: Event listeners, Browser APIs, State management, Client-side-only libraries
 
 ## When implementing features
 - Each feature directory should contain domain-specific code for a given feature
-- All features should have a clear and well-defined public API exposed through their index.ts file
+- Expose public API via `index.ts`
 
+## Side notes
+- When creating new folders using terminal commands, create one by one by using `mkdir`. DONT USE `mkdir -p`
+- When I say "commit":
+    - commit the changes you have made so far and push to the remote Github repo
+    - Update what you have completed/in-progress in docs\work-logs.md along with your learning and insights. Continue your logs within the current date group/section

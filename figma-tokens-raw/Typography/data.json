@@ -1,0 +1,108 @@
+{
+  "font-family": {
+    "primary": {
+      "$type": "text",
+      "$value": "Inter",
+      "$description": "fontFamily variable for Inter"
+    }
+  },
+  "font-size": {
+    "12": {
+      "$type": "dimension",
+      "$value": "0.75rem",
+      "$description": "fontSize variable for 12"
+    },
+    "14": {
+      "$type": "dimension",
+      "$value": "0.875rem",
+      "$description": "fontSize variable for 14"
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "1rem",
+      "$description": "fontSize variable for 16"
+    },
+    "18": {
+      "$type": "dimension",
+      "$value": "1.125rem",
+      "$description": "fontSize variable for 18"
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "1.25rem",
+      "$description": "fontSize variable for 20"
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "1.5rem",
+      "$description": "fontSize variable for 24"
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "2rem",
+      "$description": "fontSize variable for 32"
+    },
+    "36": {
+      "$type": "dimension",
+      "$value": "2.25rem",
+      "$description": "fontSize variable for 36"
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "2.5rem",
+      "$description": "fontSize variable for 40"
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "3rem",
+      "$description": "fontSize variable for 48"
+    },
+    "56": {
+      "$type": "dimension",
+      "$value": "3.5rem",
+      "$description": "fontSize variable for 56"
+    }
+  },
+  "font-weight": {
+    "bold": {
+      "$type": "dimension",
+      "$value": "43.75rem",
+      "$description": "fontWeight variable for bold"
+    },
+    "medium": {
+      "$type": "dimension",
+      "$value": "31.25rem",
+      "$description": "fontWeight variable for medium"
+    },
+    "light": {
+      "$type": "dimension",
+      "$value": "18.75rem",
+      "$description": "fontWeight variable for light"
+    },
+    "regular": {
+      "$type": "dimension",
+      "$value": "25rem",
+      "$description": "fontWeight variable for regular"
+    },
+    "semi bold": {
+      "$type": "dimension",
+      "$value": "37.5rem"
+    },
+    "extra light": {
+      "$type": "dimension",
+      "$value": "12.5rem"
+    },
+    "thin": {
+      "$type": "dimension",
+      "$value": "6.25rem"
+    },
+    "black": {
+      "$type": "dimension",
+      "$value": "56.25rem"
+    },
+    "extra bold": {
+      "$type": "dimension",
+      "$value": "50rem"
+    }
+  }
+}
